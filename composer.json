@@ -1,5 +1,12 @@
 {
     "name": "franzl/laravel-easy-migrations",
+    "description": "Simple, reversible migrations for Laravel",
+    "keywords": ["laravel", "migrations"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/database": "5.2.*"
+    },
     "autoload": {
         "psr-4": {
             "Franzl\\EasyMigrations\\": "src/"
