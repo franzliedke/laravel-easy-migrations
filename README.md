@@ -89,3 +89,64 @@ public function change()
     ]);
 }
 ~~~
+
+The second parameter is an array of column definitions, with the key being the column name.
+The value of each item is an array with the column definitions, as understood by Laravel's `Illuminate\Database\Schema\Blueprint::addColumn()` method.
+The first option is the column type, any other keyed option is passed through to `addColumn`.
+
+The following options are supported for all column types:
+
+- `nullable`: Whether the column allows `NULL` values, boolean, defaults to `false`
+- `default`: Column default value, mixed
+- `unique`: Creates a UNIQUE index for the column, boolean, defaults to `false`
+- `first`: Insert the column as the first in the table, boolean, defaults to `false`, MySQL only
+- `after`: Insert the column directly after the specified existing column, string, MySQL only
+
+In the following, all supported types, along with custom options, are listed:
+
+#### char, string
+
+- `length`: Column size, integer
+
+#### text, mediumText, longText
+
+*No special options*
+
+#### integer, tinyInteger, smallInteger, mediumInteger, bigInteger
+
+- `autoIncrement`: Set to `true` to mark this column as sequence
+- `unsigned`: Set to `true` to mark this column as unsigned integer
+
+#### float, decimal
+
+- `total`: Number of decimal digits, integer, defaults to `8`
+- `places`: Number of digits after the decimal point, integer, defaults to `2`
+
+#### double
+
+- `total`: Number of decimal digits, integer
+- `places`: Number of digits after the decimal point, integer
+
+#### boolean
+
+*No special options*
+
+#### enum
+
+- `allowed`: An array of possible values that the column can have
+
+#### json, jsonb
+
+*No special options*
+
+#### date, dateTime, dateTimeTz, time, timeTz, timestamp, timestampTz
+
+*No special options*
+
+#### binary
+
+*No special options*
+
+#### uuid
+
+*No special options*
