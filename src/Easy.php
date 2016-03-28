@@ -2,7 +2,10 @@
 
 namespace Franzl\EasyMigrations;
 
+use Franzl\EasyMigrations\Types\AddColumns;
 use Franzl\EasyMigrations\Types\CreateTable;
+use Franzl\EasyMigrations\Types\RenameColumn;
+use Franzl\EasyMigrations\Types\RenameTable;
 
 class Easy
 {
