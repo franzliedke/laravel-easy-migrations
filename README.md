@@ -9,6 +9,8 @@ This way, you don't have to deal with the time-consuming and error-prone (not to
 
 Run `composer require franzl/laravel-easy-migrations` and you're good to go.
 
+Please note that - just like with Laravel - you will need to install the `doctrine/dbal` package if you want to rename columns and/or drop SQLite columns.
+
 ## Usage
 
 To create a reversible migration, extend your migration class from the `Franzl\EasyMigrations\EasyMigration` base class.
