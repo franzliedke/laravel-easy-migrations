@@ -1,0 +1,16 @@
+{
+    "name": "franzl/laravel-easy-migrations",
+    "autoload": {
+        "psr-4": {
+            "Franzl\\EasyMigrations\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Franzl\\EasyMigrations\\Tests\\": "tests/"
+        }
+    }
+}
