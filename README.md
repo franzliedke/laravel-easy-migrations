@@ -5,6 +5,14 @@
 This package makes it easy to create automatically reversible database migrations for common operations.
 This way, you don't have to deal with the time-consuming and error-prone (not to mention stupid and boring) task of manually writing the `down` logic for your migrations.
 
+- [Installation](#installation)
+- [Usage](#usage)
+- [Documentation](#documentation)
+  - [Creating tables](#creating-tables)
+  - [Renaming tables](#renaming-tables)
+  - [Renaming columns](#renaming-columns)
+  - [Adding columns](#adding-columns)
+
 ## Installation
 
 Run `composer require franzl/laravel-easy-migrations` and you're good to go.
