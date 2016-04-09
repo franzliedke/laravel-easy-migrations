@@ -52,8 +52,10 @@ This package currently implements the following four operations:
 
 - Creating tables
 - Renaming tables
+- Dropping tables
 - Renaming columns
 - Adding columns
+- Dropping columns
 
 More will likely be implemented soon.
 Feel free to suggest a new operation type by creating an issue.
@@ -78,6 +80,21 @@ public function change()
     return Easy::renameTable('old_users', 'new_users');
 }
 ~~~
+
+### Dropping tables
+
+~~~php
+public function change()
+{
+    return Easy::dropTable('users', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('name');
+    });
+}
+~~~
+
+Note that, for the migration to be reversible, you will need to pass in a blueprint to restore the table completely.
+This would be executed when the migration is rolled back.
 
 ### Renaming columns
 
@@ -160,3 +177,17 @@ In the following, all supported types, along with custom options, are listed:
 #### uuid
 
 *No special options*
+
+### Dropping columns
+
+~~~php
+public function change()
+{
+    return Easy::dropColumns('users', [
+        'password' => ['string'],
+        'registered_at' => ['dateTime', 'nullable' => true]
+    ]);
+}
+~~~
+
+Again, just like when dropping tables, you should specify the full column definitions so that the migration can be rolled back cleanly.
