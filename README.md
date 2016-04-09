@@ -10,8 +10,10 @@ This way, you don't have to deal with the time-consuming and error-prone (not to
 - [Documentation](#documentation)
   - [Creating tables](#creating-tables)
   - [Renaming tables](#renaming-tables)
+  - [Dropping tables](#dropping-tables)
   - [Renaming columns](#renaming-columns)
   - [Adding columns](#adding-columns)
+  - [Dropping columns](#dropping-columns)
 
 ## Installation
 
