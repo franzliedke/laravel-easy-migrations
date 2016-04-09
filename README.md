@@ -193,3 +193,5 @@ public function change()
 ~~~
 
 Again, just like when dropping tables, you should specify the full column definitions so that the migration can be rolled back cleanly.
+
+For a reference of column types and their respective options, please take a look at the documentation for [adding columns](#adding-columns).
