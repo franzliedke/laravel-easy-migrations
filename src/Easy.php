@@ -4,10 +4,9 @@ namespace Franzl\EasyMigrations;
 
 use Franzl\EasyMigrations\Types\AddColumns;
 use Franzl\EasyMigrations\Types\CreateTable;
-use Franzl\EasyMigrations\Types\DropColumns;
-use Franzl\EasyMigrations\Types\DropTable;
 use Franzl\EasyMigrations\Types\RenameColumn;
 use Franzl\EasyMigrations\Types\RenameTable;
+use Franzl\EasyMigrations\Types\Reversed;
 
 class Easy
 {
@@ -18,7 +17,9 @@ class Easy
 
     public static function dropTable($tableName, callable $blueprint)
     {
-        return new DropTable($tableName, $blueprint);
+        return new Reversed(
+            new CreateTable($tableName, $blueprint)
+        );
     }
 
     public static function renameTable($oldName, $newName)
@@ -38,6 +39,8 @@ class Easy
 
     public static function dropColumns($tableName, $columnDefinitions)
     {
-        return new DropColumns($tableName, $columnDefinitions);
+        return new Reversed(
+            new AddColumns($tableName, $columnDefinitions)
+        );
     }
 }
